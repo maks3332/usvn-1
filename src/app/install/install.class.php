@@ -295,6 +295,9 @@ class Install
 		if (!isset($config->url))
 			$config->url = array();
 		$config->url->base = $path;
+        $config->url->usvn = $usvn_url;
+        $config->url->isHttps = $https;
+        $config->server->host = $server_host;
 		$config->save();
 		$content = <<<EOF
 <Files *.ini>
