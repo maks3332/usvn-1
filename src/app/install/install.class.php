@@ -297,6 +297,9 @@ class Install
 		$config->url->base = $path;
         $config->url->usvn = $usvn_url;
         $config->url->isHttps = $https;
+
+		if (!isset($config->server))
+			$config->server = array();
         $config->server->host = $server_host;
 		$config->save();
 		$content = <<<EOF
